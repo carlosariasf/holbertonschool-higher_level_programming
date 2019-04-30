@@ -5,7 +5,7 @@ if number < 0:
     last = (number * -1) % 10
 else:
     last = number % 10
-if last < 5 and last != 0:
+if last < 6 and last != 0:
     print("Last digit of {:d} is {:d} and is less than 6\
  and not 0".format(number, last))
 elif last > 5:
