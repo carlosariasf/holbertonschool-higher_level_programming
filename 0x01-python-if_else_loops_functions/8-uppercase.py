@@ -1,12 +1,9 @@
 #!/usr/bin/python3
 def uppercase(str):
+    str2 = ""
     for i in range(0, len(str)):
-        if str[i] != '\n':
-            if i + 1 < len(str):
-                endo = ""
+            if ord(str[i]) > 96 and ord(str[i]) < 123:
+                str2 += chr(ord(str[i]) - 32)
             else:
-                endo = "\n"
-        if ord(str[i]) > 96 and ord(str[i]) < 123:
-            print("{}".format(chr(ord(str[i]) - 32)), end=endo)
-        else:
-            print("{}".format(str[i]), end=endo)
+                str2 += str[i]
+    print("{}".format(str2))
