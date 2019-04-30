@@ -7,6 +7,6 @@ def uppercase(str):
             else:
                 endo = "\n"
         if ord(str[i]) > 96 and ord(str[i]) < 123:
-            print("{}".format(chr(ord(str[i]) - 32)), end = endo)
+            print("{}".format(chr(ord(str[i]) - 32)), end=endo)
         else:
-            print("{}".format(str[i]), end = endo)
+            print("{}".format(str[i]), end=endo)
