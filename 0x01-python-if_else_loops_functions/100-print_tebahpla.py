@@ -9,4 +9,3 @@ for c in range(122, 96, -1):
         char = chr(c)
         control = 1
     print("{}".format(char), end="")
-
