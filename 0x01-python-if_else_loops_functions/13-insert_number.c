@@ -38,14 +38,20 @@ listint_t *insert_node(listint_t **head, int number)
 		}
 		else if (temp == NULL)
 		{
-			current = current->next;
-			current->next = new;
+			new->next = NULL;
+			current = new;
+			printf("*%d*", current->n);
 			return (new);
+		}
+		else
+		{
+			free(new);
+			return (NULL);
 		}
 	current = current->next;
 	temp = temp->next;
 	index++;
 	}
-
-	return (new);
+	free(new);
+	return (NULL);
 }
