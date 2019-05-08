@@ -12,7 +12,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
         else:
             sumt = (0 + 0)
 
-    if tuple_a and len(tuple_a) > 0 and tuple_a[1]:
+    if tuple_a and len(tuple_a) > 1:
         if tuple_b and len(tuple_b) > 1:
             sumt = sumt, (tuple_a[1] + tuple_b[1])
         else:
