@@ -6,5 +6,3 @@ def magic_calculation(a, b):
             i > a
         except 'Too far':
             result = a ** b / i
-
-
