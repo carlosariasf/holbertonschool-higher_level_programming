@@ -31,7 +31,8 @@ class Square():
                     raise TypeError
                 self.__position = position
             except TypeError as e:
-                raise Exception("position must be a tuple of 2 positive integers") from e
+                raise Exception("position must be a tuple "
+                                "of 2 positive integers") from e
         except Exception as err:
             print(err)
 
@@ -87,7 +88,8 @@ class Square():
                     raise TypeError
                 self.__position = value
             except TypeError as e:
-                raise Exception("position must be a tuple of 2 positive integers") from e
+                raise Exception("position must be a tuple "
+                                "of 2 positive integers") from e
         except Exception as err:
             print(err)
 
