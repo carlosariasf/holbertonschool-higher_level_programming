@@ -8,15 +8,18 @@ class Square():
     def __init__(self, size=0):
         """Inits Square with size, pnly allowed type int > 0."""
         try:
-            size + 2
-        except TypeError as e:
-            raise Exception("size must be an integer") from e
-        try:
-            if (int(size) < 0):
-                raise ValueError
-            self.__size = size
-        except ValueError as e:
-            raise Exception("size must be >= 0") from e
+            try:
+                size + 2
+            except TypeError as e:
+                raise Exception("size must be an integer") from e
+            try:
+                if (int(size) < 0):
+                    raise ValueError
+                self.__size = size
+            except ValueError as e:
+                raise Exception("size must be >= 0") from e
+        except Exception as err:
+            print(err)
 
     @property
     def size(self):
@@ -31,15 +34,18 @@ class Square():
             value: New size
         """
         try:
-            value + 2
-        except TypeError as e:
-            raise Exception("size must be an integer") from e
-        try:
-            if (int(value) < 0):
-                raise ValueError
-            self.__size = value
-        except ValueError as e:
-            raise Exception("size must be >= 0") from e
+            try:
+                value + 2
+            except TypeError as e:
+                raise Exception("size must be an integer") from e
+            try:
+                if (int(value) < 0):
+                    raise ValueError
+                self.__size = value
+            except ValueError as e:
+                raise Exception("size must be >= 0") from e
+        except Exception as err:
+            print(err)
 
     def area(self):
         """Returns the area of square."""
