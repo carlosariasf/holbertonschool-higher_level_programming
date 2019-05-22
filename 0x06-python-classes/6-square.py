@@ -8,27 +8,32 @@ class Square():
     def __init__(self, size=0, position=(0, 0)):
         """Inits Square with size, pnly allowed type int > 0."""
         try:
-            size + 2
-        except TypeError as e:
-            raise Exception("size must be an integer") from e
-        try:
-            if (int(size) < 0):
-                raise ValueError
-            self.__size = size
-        except ValueError as e:
-            raise Exception("size must be >= 0") from e
-        try:
-             check = 0
-             if type(position) is tuple:
-                 if len(position) == 2:
-                     for i in position:
-                         if (int(i) >= 0):
-                             check += 1
-             if check != 2:
-             	raise ValueError
-             self.__position = position
-        except TypeError as e:
-             raise Exception("position must be a tuple of 2 positive integers") from e
+            try:
+                if not type(size) == int:
+                    raise TypeError
+            except TypeError as e:
+                raise Exception("size must be an integer") from e
+            try:
+                if (int(size) < 0):
+                    raise ValueError
+                self.__size = size
+            except ValueError as e:
+                raise Exception("size must be >= 0") from e
+            try:
+                check = 0
+                if type(position) is tuple:
+                    if len(position) == 2:
+                        for i in position:
+                            if type(i) == int:
+                                if i >= 0:
+                                    check += 1
+                if check != 2:
+                    raise TypeError
+                self.__position = position
+            except TypeError as e:
+                raise Exception("position must be a tuple of 2 positive integers") from e
+        except Exception as err:
+            print(err)
 
     @property
     def size(self):
@@ -43,15 +48,19 @@ class Square():
             value: New size
         """
         try:
-            value + 2
-        except TypeError as e:
-            raise Exception("size must be an integer") from e
-        try:
-            if (int(value) < 0):
-                raise ValueError
-            self.__size = value
-        except ValueError as e:
-            raise Exception("size must be >= 0") from e
+            try:
+                if not type(size) == int:
+                    raise TypeError
+            except TypeError as e:
+                raise Exception("size must be an integer") from e
+            try:
+                if (int(value) < 0):
+                    raise ValueError
+                self.__size = value
+            except ValueError as e:
+                raise Exception("size must be >= 0") from e
+        except Exception as err:
+            print(err)
 
     @property
     def position(self):
@@ -66,17 +75,21 @@ class Square():
             value: New size
         """
         try:
-            check = 0
-            if type(value) is tuple:
-                if len(value) == 2:
-                    for i in value:
-                        if (int(i) >= 0):
-                            check += 1
-            if check != 2:
-                raise ValueError
-            self.__position = value
-        except TypeError as e:
-            raise Exception("position must be a tuple of 2 positive integers") from e
+            try:
+                check = 0
+                if type(value) is tuple:
+                    if len(value) == 2:
+                        for i in value:
+                            if type(i) == int:
+                                if i >= 0:
+                                    check += 1
+                if check != 2:
+                    raise TypeError
+                self.__position = value
+            except TypeError as e:
+                raise Exception("position must be a tuple of 2 positive integers") from e
+        except Exception as err:
+            print(err)
 
     def area(self):
         """Returns the area of square."""
