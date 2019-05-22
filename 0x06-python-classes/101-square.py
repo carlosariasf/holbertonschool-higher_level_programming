@@ -112,7 +112,6 @@ class Square():
     def __str__(self):
         str_prt = ''
         if self.__size == 0:
-            str_prt += '\n'
             return str_prt
         else:
             count = 0
