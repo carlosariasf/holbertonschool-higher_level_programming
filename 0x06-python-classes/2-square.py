@@ -8,7 +8,8 @@ class Square():
     def __init__(self, size=0):
         """Inits Square with size, pnly allowed type int > 0."""
         try:
-            size + 2
+            if not type(size) == int:
+                raise TypeError
         except TypeError as e:
             raise Exception("size must be an integer") from e
         try:
