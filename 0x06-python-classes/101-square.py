@@ -115,10 +115,13 @@ class Square():
             str_prt += '\n'
             return str_prt
         else:
+            count = 0
             str_prt += ('\n' * int(self.__position[1]))
             for i in range(self.__size):
+                if count != 0:
+                    str_prt += '\n'
                 str_prt += (" " * int(self.__position[0]))
                 for j in range(self.__size):
                     str_prt += '#'
-                str_prt += '\n'
-        return str_prt[:-1]
+                    count += 1
+        return str_prt
