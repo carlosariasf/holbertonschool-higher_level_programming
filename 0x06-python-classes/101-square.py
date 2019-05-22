@@ -122,4 +122,3 @@ class Square():
                     str_prt += '#'
                 str_prt += '\n'
         return str_prt[:-1]
-
