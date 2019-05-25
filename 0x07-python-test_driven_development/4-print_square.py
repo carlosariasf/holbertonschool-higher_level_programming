@@ -1,6 +1,15 @@
 #!/usr/bin/python3
+"""Python Module
+
+    Functions:
+        print_square(size)
+"""
 def print_square(size):
-    """Print square"""
+    """Function to print a square
+
+    Args:
+        size: Size of square
+    """
     try:
         try:
             if type(size) != int:
@@ -15,7 +24,7 @@ def print_square(size):
                     for j in range(size):
                         print("#", end='')
                     print("")
-        except ValueError as e:
+        except TypeError as e:
             raise Exception("size must be >= 0") from e
     except Exception as err:
         print(err)

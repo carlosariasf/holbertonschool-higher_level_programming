@@ -1,6 +1,14 @@
 #!/usr/bin/python3
+"""Module add_integer
+
+    Functions:
+    add_integer(a,b)
+"""
+
 def add_integer(a, b=98):
-    """Comments"""
+    """
+    Function to add int
+    """
     try:
         if type(a) is int or type(a) is float:
             a = int(a)

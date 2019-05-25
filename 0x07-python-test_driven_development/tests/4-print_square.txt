@@ -1,0 +1,29 @@
+>>> def print_square(size):
+...     try:
+...         try:
+...             if type(size) != int:
+...                 raise TypeError
+...         except TypeError as e:
+...             raise Exception("size must be an integer") from e
+...         try:
+...             if (int(size) < 0):
+...                 raise TypeError
+...             else:
+...                 for i in range(size):
+...                     for j in range(size):
+...                         print("#", end='')
+...                     print("")
+...         except TypeError as e:
+...             raise Exception("size must be >= 0") from e
+...     except Exception as err:
+...         print(err)
+>>> print_square(4)
+####
+####
+####
+####
+
+>>> print_square(-1)
+size must be >= 0
+>>> print_square("a")
+size must be an integer

@@ -1,6 +1,16 @@
 #!/usr/bin/python3
+"""Python Module
+
+    Functions:
+        say_my_name
+"""
 def say_my_name(first_name, last_name=""):
-    """ Coments """
+    """Function to print a first name and last name
+
+    Args:
+        first_name: String with name
+        last_name: String with last name
+    """
     try:
         try:
             if type(first_name) is str:

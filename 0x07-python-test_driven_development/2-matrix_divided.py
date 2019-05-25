@@ -1,6 +1,17 @@
 #!/usr/bin/python3
+"""Python Module
+
+    Functions:
+        matrix_divided(matrix, div)
+"""
 def matrix_divided(matrix, div):
-    """Comments"""
+    """Function to div a matrix
+
+    Args:
+        matrix: Matrix of numbers
+        div: Number to div the matrix
+        Return: New matrix
+    """
     count = 0
     itms = 0
     tmp = []
