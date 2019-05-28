@@ -46,9 +46,8 @@ class Rectangle():
         if self.__width == 0 or self.__height == 0:
             return str_prt
         else:
-            print(str(Rectangle.print_symbol))
             for i in range(self.__height):
-                str_prt += str(Rectangle.print_symbol) * self.__width
+                str_prt += Rectangle.print_symbol * self.__width
                 if i != self.__height - 1:
                     str_prt += '\n'
             return str_prt
