@@ -59,8 +59,14 @@ class Rectangle():
         return repr_prt
 
     def __del__(self):
+        """ """
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+
+    def bigger_or_equal(rect_1, rect_2):
+        """ """
+        if Rectangle.area(rect_1) == Rectangle.area(rect_2):
+            return rect_1
 
     def check(self, name, value):
         """ """
