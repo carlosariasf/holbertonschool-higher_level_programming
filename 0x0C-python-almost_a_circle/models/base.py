@@ -49,9 +49,9 @@ class Base():
         ilist = []
         with open("{}.json".format(
                 cls.__name__), mode="r", encoding="utf-8") as f:
-            if f:
-                ilist = f
-                print(ilist)
+                slist = cls.from_json_string(f.read())
+                for i in slist:
+                    ilist.append(cls.create(**i))
         return ilist
 
     @classmethod
