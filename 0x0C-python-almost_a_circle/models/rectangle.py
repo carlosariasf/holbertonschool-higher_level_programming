@@ -84,7 +84,7 @@ class Rectangle(Base):
                         self.height = args[2]
                         if la >= 4:
                             self.x = args[3]
-                            if la > 4 and la < 6:
+                            if la >=5:
                                 self.y = args[4]
         else:
             if kwargs:
