@@ -36,9 +36,10 @@ class Base():
     @classmethod
     def create(cls, **dictionary):
         """Esto es un comentario"""
-        clsd = cls(1, 1)
-        clsd.update(**dictionary)
-        return clsd
+        if dictionary:
+            clsd = cls(1, 1)
+            clsd.update(**dictionary)
+            return clsd
 
     @classmethod
     def load_from_file(cls):
