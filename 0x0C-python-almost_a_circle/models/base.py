@@ -24,9 +24,10 @@ class Base():
         else:
             return "[]"
 
+    @staticmethod
     def from_json_string(json_string):
         """Esto es un comentario"""
-        if json_string:
+        if json_string and json_string != 0:
             return json.loads(json_string)
         else:
             return []
