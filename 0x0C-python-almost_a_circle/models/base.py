@@ -36,10 +36,12 @@ class Base():
     @classmethod
     def create(cls, **dictionary):
         """Esto es un comentario"""
-        if dictionary:
+        if cls.__name__ is "Rectangle":
             clsd = cls(1, 1)
-            clsd.update(**dictionary)
-            return clsd
+        else:
+            clsd = cls(1)
+        clsd.update(**dictionary)
+        return clsd
 
     @classmethod
     def load_from_file(cls):
