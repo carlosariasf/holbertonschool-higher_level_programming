@@ -74,7 +74,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """Esto es un comentario"""
-        if args and type(args) is int:
+        if args:
             la = len(args)
             if la >= 1:
                 self.id = args[0]
@@ -84,7 +84,7 @@ class Rectangle(Base):
                         self.height = args[2]
                         if la >= 4:
                             self.x = args[3]
-                            if la >=5:
+                            if la > 4 and la < 6:
                                 self.y = args[4]
         else:
             if kwargs:
