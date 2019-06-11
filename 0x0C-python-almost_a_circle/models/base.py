@@ -17,6 +17,7 @@ class Base():
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """Esto es un comentario"""
         if list_dictionaries:
@@ -27,7 +28,7 @@ class Base():
     @staticmethod
     def from_json_string(json_string):
         """Esto es un comentario"""
-        if json_string and json_string != 0:
+        if json_string:
             return json.loads(json_string)
         else:
             return []
