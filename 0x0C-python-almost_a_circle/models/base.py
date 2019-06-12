@@ -46,14 +46,16 @@ class Base():
     @classmethod
     def load_from_file(cls):
         """Esto es un comentario"""
-        ilist = []
-        with open("{}.json".format(
-                cls.__name__), mode="r", encoding="utf-8") as f:
-            slist = cls.from_json_string(f.read())
-            for i in slist:
-                nobj = cls.create(**i)
-                ilist.append(nobj)
-        return ilist
+        try:
+            with open("{}.json".format(
+                    cls.__name__), mode="r", encoding="utf-8") as f:
+                slist = cls.from_json_string(f.read())
+                ilist = []
+                for i in slist:
+                    ilist.append(cls.create(**i))
+                return ilist
+        except:
+            return []
 
     @classmethod
     def save_to_file(cls, list_objs):
