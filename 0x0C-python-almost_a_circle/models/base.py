@@ -49,9 +49,10 @@ class Base():
         ilist = []
         with open("{}.json".format(
                 cls.__name__), mode="r", encoding="utf-8") as f:
-                slist = cls.from_json_string(f.read())
-                for i in slist:
-                    ilist.append(cls.create(**i))
+            slist = cls.from_json_string(f.read())
+            for i in slist:
+                nobj = cls.create(**i)
+                ilist.append(nobj)
         return ilist
 
     @classmethod
