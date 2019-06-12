@@ -40,14 +40,14 @@ class Square(Rectangle):
         else:
             if kwargs:
                 for att, value in kwargs.items():
-                    if att is "id":
+                    if att == "id":
                         self.id = value
-                    if att is "size":
+                    if att == "size":
                         self.width = value
                         self.height = value
-                    if att is "x":
+                    if att == "x":
                         self.x = value
-                    if att is "y":
+                    if att == "y":
                         self.y = value
 
     def to_dictionary(self):

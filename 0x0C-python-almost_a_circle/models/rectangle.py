@@ -89,15 +89,15 @@ class Rectangle(Base):
         else:
             if kwargs:
                 for att, value in kwargs.items():
-                    if att is "id":
+                    if att == "id":
                         self.id = value
-                    if att is "width":
+                    if att == "width":
                         self.width = value
-                    if att is "height":
+                    if att == "height":
                         self.height = value
-                    if att is "x":
+                    if att == "x":
                         self.x = value
-                    if att is "y":
+                    if att == "y":
                         self.y = value
 
     def __str__(self):
