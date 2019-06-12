@@ -41,14 +41,14 @@ class Square(Rectangle):
             if kwargs:
                 for att, value in kwargs.items():
                     if att == "id":
-                        self.id = value
+                        self.id = int(value)
                     if att == "size":
-                        self.width = value
-                        self.height = value
+                        self.width = int(value)
+                        self.height = int(value)
                     if att == "x":
-                        self.x = value
+                        self.x = int(value)
                     if att == "y":
-                        self.y = value
+                        self.y = int(value)
 
     def to_dictionary(self):
         """Esto es un comentario"""

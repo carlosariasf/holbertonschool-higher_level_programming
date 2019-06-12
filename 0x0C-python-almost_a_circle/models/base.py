@@ -80,9 +80,7 @@ class Base():
                 slist = csv.DictReader(f)
                 ilist = []
                 for i in slist:
-                    """
                     ilist.append(cls.create(**i))
-                    """
                 return ilist
         except:
             return []

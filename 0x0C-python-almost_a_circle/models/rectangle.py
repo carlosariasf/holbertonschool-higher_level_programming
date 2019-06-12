@@ -90,15 +90,15 @@ class Rectangle(Base):
             if kwargs:
                 for att, value in kwargs.items():
                     if att == "id":
-                        self.id = value
+                        self.id = int(value)
                     if att == "width":
-                        self.width = value
+                        self.width = int(value)
                     if att == "height":
-                        self.height = value
+                        self.height = int(value)
                     if att == "x":
-                        self.x = value
+                        self.x = int(value)
                     if att == "y":
-                        self.y = value
+                        self.y = int(value)
 
     def __str__(self):
         """Esto es un comentario"""
