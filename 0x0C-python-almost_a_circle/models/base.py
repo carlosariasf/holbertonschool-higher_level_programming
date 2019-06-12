@@ -3,6 +3,7 @@
 
 
 import json
+import csv
 
 
 class Base():
@@ -67,5 +68,42 @@ class Base():
                 for i in range(len(list_objs)):
                     dict2.append(dict(list_objs[i].to_dictionary()))
                 f.write(cls.to_json_string(dict2))
+            else:
+                f.write("[]")
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Esto es un comentario"""
+        try:
+            with open("{}.csv".format(
+                    cls.__name__), mode="r", encoding="utf-8") as f:
+                slist = csv.DictReader(f)
+                ilist = []
+                for i in slist:
+                    """
+                    ilist.append(cls.create(**i))
+                    """
+                return ilist
+        except:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Esto es un comentario"""
+        dic = []
+        fieldnames = []
+        if cls.__name__ == "Rectangle":
+            fieldnames = ['id', 'width', 'height', 'x', 'y']
+        else:
+            fieldnames = ['id', 'size', 'x', 'y']
+        with open("{}.csv".format(
+                cls.__name__), mode="w", encoding="utf-8") as f:
+            if list_objs:
+                for i in list_objs:
+                    dic.append(i.to_dictionary())
+                writer = csv.DictWriter(f, fieldnames=fieldnames)
+                writer.writeheader()
+                for j in dic:
+                    writer.writerow(j)
             else:
                 f.write("[]")
