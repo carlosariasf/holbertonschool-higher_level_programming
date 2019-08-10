@@ -18,7 +18,7 @@ def main():
         cur = db.cursor()
         try:
             cur.execute("SELECT * FROM states\
-                    WHERE name LIKE 'N%' ORDER BY states.id ASC;")
+                    WHERE name LIKE 'N%' ORDER BY states.id ASC")
             rows = cur.fetchall()
         except MySQLdb.Error as e:
             try:
