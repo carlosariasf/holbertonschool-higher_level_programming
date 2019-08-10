@@ -24,7 +24,7 @@ def main():
             print(row[0], end=", ")
             i += 1
         else:
-            print(row[0])
+            print(row[0], end="")
     cur.close()
     db.close()
 
