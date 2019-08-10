@@ -13,8 +13,7 @@ def main():
             passwd=sys.argv[2],
             db=sys.argv[3])
     cur = db.cursor()
-    cur.execute("SELECT * FROM states\
-            WHERE name LIKE 'N%' ORDER BY states.id ASC")
+    cur.execute("SELECT * FROM states WHERE name LIKE 'N%'")
     rows = cur.fetchall()
     for row in rows:
         print(row)
@@ -22,5 +21,5 @@ def main():
     db.close()
 
 if __name__ == "__main__":
-    '''Prevent import'''
+    """ Prevent importing """
     main()
