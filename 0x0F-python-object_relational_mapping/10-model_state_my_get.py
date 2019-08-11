@@ -11,12 +11,13 @@ def main():
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
     search = "%s", (sys.argv[4],)
+    search = "%" + search[1][0] + "%"
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
     states = session.query(State)\
                     .order_by(State.id)\
-                    .filter(State.name.like('%{}%'.format(search[1][0])))\
+                    .filter(State.name.like(search))\
                     .first()
     if states is not None:
         print("{}".format(states.id))
