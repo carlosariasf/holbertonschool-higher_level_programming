@@ -14,8 +14,8 @@ def main():
             db=sys.argv[3])
     cur = db.cursor()
     cur.execute("SELECT cities.name FROM cities\
-            LEFT JOIN states ON cities.state_id = states.id\
-            WHERE states.name LIKE BINARY %s\
+            INNER JOIN states ON cities.state_id = states.id\
+            WHERE states.name = %s\
             ORDER BY cities.id ASC;", (sys.argv[4],))
     rows = cur.fetchall()
     i = 1
@@ -24,7 +24,7 @@ def main():
             print(row[0], end=", ")
             i += 1
         else:
-            print(row[0], end="")
+            print(row[0])
     cur.close()
     db.close()
 
