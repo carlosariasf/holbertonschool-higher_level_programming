@@ -16,7 +16,7 @@ def main():
     states = session.query(State)\
                     .order_by(State.id)\
                     .first()
-    if states != None:
+    if states is not None:
         print("{}: {}".format(states.id, states.name))
     else:
         print("Nothing")
