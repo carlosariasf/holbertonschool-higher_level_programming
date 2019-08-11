@@ -15,16 +15,13 @@ def main():
     cur = db.cursor()
     cur.execute("SELECT cities.name FROM cities\
             INNER JOIN states ON cities.state_id = states.id\
-            WHERE states.name = %s\
+            WHERE states.name LIKE BINARY %s\
             ORDER BY cities.id ASC;", (sys.argv[4],))
     rows = cur.fetchall()
-    i = 1
+    ls_items = []
     for row in rows:
-        if i < len(rows):
-            print(row[0], end=", ")
-            i += 1
-        else:
-            print(row[0])
+        ls_items.append(row[0])
+    print(", ".join(ls_items))
     cur.close()
     db.close()
 
