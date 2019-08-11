@@ -8,13 +8,14 @@ from sys import argv
 
 if __name__ == "__main__":
     """ Prevent import """
-    engine = create_engine('mysql://%s:%s@localhost:3306/%s',
-            (argv[1], argv[2], argv[3],))
+    engine = create_engine('mysql://%s:%s@localhost:3306/%s', (
+        argv[1], argv[2], argv[3],))
     Session = sessionmaker(bind=engine)
     Base = declarative_base()
+
 
 class State(Base):
     ''' State class inherits from Base '''
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True, unique=True, nullable=False)
-    name =  Column(String(128), nullable=False)
+    name = Column(String(128), nullable=False)
