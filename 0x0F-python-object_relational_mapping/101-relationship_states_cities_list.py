@@ -16,9 +16,9 @@ def main():
     Session.configure(bind=engine)
     session = Session()
     states = session.query(State)\
-            .join(City, State.cities)\
-            .order_by(State.id)\
-            .all()
+        .join(City, State.cities)\
+        .order_by(State.id)\
+        .all()
     for state in states:
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
