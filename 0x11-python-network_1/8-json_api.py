@@ -6,7 +6,7 @@ import sys
 
 if __name__ == "__main__":
     """Python script that fetches https://intranet.hbtn.io/status"""
-    url = "http://34.206.234.184:47057/search_user"
+    url = "http://0.0.0.0:5000/search_user"
     if len(sys.argv) < 2:
         q = ""
     else:
