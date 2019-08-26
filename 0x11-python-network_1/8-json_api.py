@@ -12,11 +12,11 @@ if __name__ == "__main__":
     else:
         q = '{}'.format(sys.argv[1])
     r = requests.post(url, data={'q': q})
-    if r.json:
+    try:
         req = r.json()
-        if not any(req.values()):
+        if req == {}:
             print("No result")
         else:
             print("[{}] {}".format(req.get("id"), req.get("name")))
-    else:
+    except:
         print("Not a valid JSON")
