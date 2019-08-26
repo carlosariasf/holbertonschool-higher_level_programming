@@ -10,7 +10,5 @@ if __name__ == "__main__":
     r = requests.get(url)
     req = r.json()
     for i in range(10):
-        print("{}: ".format(req[i].get('sha')), end="")
-        commit = req[i].get("commit")
-        auth = commit.get("author")
-        print("{}".format(auth.get("name")))
+        print("{}: ".format(req[i].get("sha")), end="")
+        print("{}".format(req[i].get("commit").get("author").get("name")))
