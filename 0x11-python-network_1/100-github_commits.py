@@ -10,7 +10,7 @@ if __name__ == "__main__":
     r = requests.get(url)
     j = 0
     for i in sorted(r.json(), key=lambda i: i.get.get("commit")
-                .get("author").get("date"), reverse=True):
+                    .get("author").get("date"), reverse=True):
         print("{}: ".format(req[i].get("sha")), end="")
         print("{}".format(req[i].get("commit").get("author").get("name")))
         j += 1
