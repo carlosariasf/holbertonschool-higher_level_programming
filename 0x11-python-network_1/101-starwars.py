@@ -16,7 +16,7 @@ if __name__ == "__main__":
     while i < len(result):
         print(result[i].get("name"))
         i += 1
-        if i == (len(result) - 1) and cn.get("next") is not None:
+        if i == len(result) and cn.get("next") is not None:
             r = requests.get(cn.get("next"))
             result = r.json().get("results")
             cn = r.json()
