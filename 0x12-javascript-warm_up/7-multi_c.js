@@ -5,7 +5,7 @@ if (isNaN(parseInt(process.argv[2], 10))) {
 } else {
   let iterNum = parseInt(process.argv[2], 10);
   if (iterNum > 0) {
-    for (i = 0; i < iterNum; i++) {
+    for (let i = 0; i < iterNum; i++) {
       console.log('C is fun');
     }
   }
