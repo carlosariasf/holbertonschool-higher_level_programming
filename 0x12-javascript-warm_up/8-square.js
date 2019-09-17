@@ -3,11 +3,11 @@
 if (isNaN(parseInt(process.argv[2]))) {
   console.log('Missing number of occurrences');
 } else {
-  let size = parseInt(process.argv[2]);
-  for (let i = 0; i < size; i++) {
-    for (let j = 0; j < size; j++) {
-      process.stdout.write('#');
+  for (let i = 0; i < parseInt(process.argv[2]); i++) {
+    let sq = '';
+    for (let j = 0; j < parseInt(process.argv[2]); j++) {
+      sq += '#';
     }
-    process.stdout.write('\n');
+    console.log(sq)
   }
 }
