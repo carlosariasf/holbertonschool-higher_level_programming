@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
 loop = ['C is fun', 'Python is cool', 'Javascript is amazing'];
-loop.forEach(function (item) {
-  console.log(item);
-});
+for (i = 0; i < loop.length; i++) {
+  console.log(loop[i]);
+}
