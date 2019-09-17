@@ -6,7 +6,7 @@ if (isNaN(parseInt(process.argv[2]))) {
   for (let i = 0; i < parseInt(process.argv[2]); i++) {
     let sq = '';
     for (let j = 0; j < parseInt(process.argv[2]); j++) {
-      sq += '#';
+      sq += 'X';
     }
     console.log(sq)
   }
