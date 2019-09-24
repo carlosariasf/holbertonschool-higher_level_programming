@@ -1,8 +1,7 @@
 #!/usr/bin/node
-let fs = require('fs');
+const fs = require('fs');
 try {
-  let text = fs.readFileSync('./' + process.argv[2], 'utf8').toString().split('\n');
-}
-catch(error) {
+  console.log((fs.readFileSync('./' + process.argv[2], 'utf8').split('\n')[0]));
+} catch (error) {
   console.error(error);
 }
