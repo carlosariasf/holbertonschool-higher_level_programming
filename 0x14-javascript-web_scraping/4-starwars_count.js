@@ -8,8 +8,10 @@ request(url, function (error, response, body) {
     const jsonObject = JSON.parse(body).results;
     let count = 0;
     for (const i in jsonObject) {
-      if (jsonObject[i].characters.includes('https://swapi.co/api/people/18/')) {
-        count++;
+      for (const j in jsonObject[i].characters) {
+        if (jsonObject[i].characters[j].includes('18')) {
+          count++;
+        }
       }
     }
     console.log(count);
