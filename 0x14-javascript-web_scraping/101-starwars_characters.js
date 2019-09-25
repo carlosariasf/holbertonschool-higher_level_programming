@@ -5,15 +5,15 @@ request(url, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    //for (const i in charac) {
-    //  request(charac[i].replace(/["\[\]]/g, ''), function (error, response, body) {
-    //    if (error) {
-    //      console.log(error);
-    //    } else {
-    //     const test = JSON.stringify(JSON.parse(body).name);
-    //      console.log(test);
-    //    }
-    //  });
-    //}
+    const jsonObject = JSON.parse(body).characters;
+    for (const i in jsonObject) {
+      request(jsonObject[i], function (error, response, body) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log(JSON.parse(body).name);
+        }
+      });
+    }
   }
 });
