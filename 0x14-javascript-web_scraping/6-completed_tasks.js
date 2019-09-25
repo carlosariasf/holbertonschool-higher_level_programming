@@ -8,14 +8,11 @@ request(url, function (error, response, body) {
     const jsonObject = JSON.parse(body);
     const dic = {};
     for (const i in jsonObject) {
-      if (jsonObject[i].userId in dic) {
-        if (jsonObject[i].completed) {
-          dic[jsonObject[i].userId] = (dic[jsonObject[i].userId] || 0) + 1;
-        }
-      } else {
-        dic[jsonObject[i].userId] = 0;
-        if (jsonObject[i].completed) {
-          dic[jsonObject[i].userId] = (dic[jsonObject[i].userId] || 0) + 1;
+      if (jsonObject[i].completed) {
+        if (!(jsonObject[i].userId in dic)) {
+          dic[jsonObject[i].userId] = 1;
+        } else {
+          dic[jsonObject[i].userId]++;
         }
       }
     }
